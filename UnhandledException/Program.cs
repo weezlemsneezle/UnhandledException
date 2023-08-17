@@ -19,14 +19,14 @@ namespace UnhandledException
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            const string description = "Unhandled non-UI thread exception";
+            const string description = "Unhandled app domain exception";
             var str = $"Unhandled: {description}; {e.ExceptionObject}";
             MessageBox.Show(str);
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            const string description = "Unhandled UI thread exception";
+            const string description = "Unhandled thread exception";
             var str = $"Thread: {description}; {e.Exception}";
             MessageBox.Show(str);
         }
